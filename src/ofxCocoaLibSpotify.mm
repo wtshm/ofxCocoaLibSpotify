@@ -43,6 +43,10 @@ void ofxCocoaLibSpotify::setVolume(double volume) {
     ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.volume = volume;
 }
 
+double ofxCocoaLibSpotify::getVolume() {
+    return ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.volume;
+}
+
 void ofxCocoaLibSpotify::setPosition(double position) {
     if (((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack != nil
         && ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.isPlaying) {
@@ -50,6 +54,42 @@ void ofxCocoaLibSpotify::setPosition(double position) {
     }
 }
 
+double ofxCocoaLibSpotify::getPosition() {
+    return ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.trackPosition;
+}
+
+double ofxCocoaLibSpotify::getDuration() {
+    SPTrack *track = ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack;
+    if (track != nil) {
+        return ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack.duration;
+    }
+    return 0;
+}
+
 bool ofxCocoaLibSpotify::isPlaying() {
     return ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.isPlaying;
+}
+
+string ofxCocoaLibSpotify::getCurrentArtistName() {
+    SPTrack *track = ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack;
+    if (track != nil) {
+        return [((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack.album.artist.name UTF8String];
+    }
+    return "";
+}
+
+string ofxCocoaLibSpotify::getCurrentTrackName() {
+    SPTrack *track = ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack;
+    if (track != nil) {
+        return [((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack.name UTF8String];
+    }
+    return "";
+}
+
+string ofxCocoaLibSpotify::getCurrentAlbumName() {
+    SPTrack *track = ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack;
+    if (track != nil) {
+        return [((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack.album.name UTF8String];
+    }
+    return "";
 }

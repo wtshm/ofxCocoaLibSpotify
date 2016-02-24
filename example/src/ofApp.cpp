@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    ofBackground(0);
     spotify = ofxCocoaLibSpotify();
     spotify.setup("USERNAME", "PASSWORD");
 }
@@ -13,7 +14,12 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    
+    if (spotify.isPlaying()) {
+        ofDrawBitmapString(spotify.getCurrentArtistName(), 20, 25);
+        ofDrawBitmapString(spotify.getCurrentTrackName(), 20, 50);
+        ofDrawBitmapString(spotify.getCurrentAlbumName(), 20, 75);
+        ofDrawBitmapString(ofToString(spotify.getPosition()) + " / " + ofToString(spotify.getDuration()), 20, 100);
+    }
 }
 
 //--------------------------------------------------------------

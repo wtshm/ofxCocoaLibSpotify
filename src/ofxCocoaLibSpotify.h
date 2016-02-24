@@ -20,8 +20,14 @@ public:
     void play(string trackURL);
     void stop();
     void setVolume(double volume);
+    double getVolume();
     void setPosition(double position);
+    double getPosition();
+    double getDuration();
     bool isPlaying();
+    string getCurrentArtistName();
+    string getCurrentTrackName();
+    string getCurrentAlbumName();
     
 private:
     void *delegate;
