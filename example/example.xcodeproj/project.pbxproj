@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28BD8D37B3D73394E1988F57 /* CocoaLibSpotify.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9CE1CB530BE2979C1872B98D /* CocoaLibSpotify.framework */; };
-		5B1F89854A6C6A5813F7685B /* libspotify.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6DAD894348BEB802974F94AE /* libspotify.framework */; };
-		5C3B46CE70363D40D091067D /* libspotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAD894348BEB802974F94AE /* libspotify.framework */; };
 		68416869D3D0D5631228B5F8 /* ofxCocoaLibSpotify.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3C47742572776B79D6D85FE6 /* ofxCocoaLibSpotify.mm */; };
-		75D50B977661E4178A848C7C /* CocoaLibSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1CB530BE2979C1872B98D /* CocoaLibSpotify.framework */; };
-		7FC794A21C7E27EA008B636D /* ofxCocoaLibSpotifyDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC794A11C7E27EA008B636D /* ofxCocoaLibSpotifyDelegate.m */; };
+		7FC794AA1C7E311E008B636D /* ofxCocoaLibSpotifyDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC794A91C7E311E008B636D /* ofxCocoaLibSpotifyDelegate.m */; };
+		7FC794AE1C7E3142008B636D /* CocoaLibSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC794AC1C7E3142008B636D /* CocoaLibSpotify.framework */; };
+		7FC794AF1C7E3142008B636D /* libspotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC794AD1C7E3142008B636D /* libspotify.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
@@ -42,8 +40,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				28BD8D37B3D73394E1988F57 /* CocoaLibSpotify.framework in CopyFiles */,
-				5B1F89854A6C6A5813F7685B /* libspotify.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +47,11 @@
 
 /* Begin PBXFileReference section */
 		3C47742572776B79D6D85FE6 /* ofxCocoaLibSpotify.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 30; name = ofxCocoaLibSpotify.mm; path = ../src/ofxCocoaLibSpotify.mm; sourceTree = SOURCE_ROOT; };
-		6DAD894348BEB802974F94AE /* libspotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libspotify.framework; path = ../../../addons/ofxCocoaLibSpotify/libs/libspotify.framework; sourceTree = "<group>"; };
-		7FC794A01C7E27EA008B636D /* ofxCocoaLibSpotifyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxCocoaLibSpotifyDelegate.h; sourceTree = "<group>"; };
-		7FC794A11C7E27EA008B636D /* ofxCocoaLibSpotifyDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ofxCocoaLibSpotifyDelegate.m; sourceTree = "<group>"; };
-		9CE1CB530BE2979C1872B98D /* CocoaLibSpotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLibSpotify.framework; path = ../../../addons/ofxCocoaLibSpotify/libs/CocoaLibSpotify.framework; sourceTree = "<group>"; };
+		7FC794A81C7E311E008B636D /* ofxCocoaLibSpotifyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxCocoaLibSpotifyDelegate.h; path = ../src/ofxCocoaLibSpotifyDelegate.h; sourceTree = "<group>"; };
+		7FC794A91C7E311E008B636D /* ofxCocoaLibSpotifyDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ofxCocoaLibSpotifyDelegate.m; path = ../src/ofxCocoaLibSpotifyDelegate.m; sourceTree = "<group>"; };
+		7FC794AB1C7E3131008B636D /* ofxCocoaLibSpotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxCocoaLibSpotify.h; path = ../src/ofxCocoaLibSpotify.h; sourceTree = "<group>"; };
+		7FC794AC1C7E3142008B636D /* CocoaLibSpotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLibSpotify.framework; path = ../libs/CocoaLibSpotify.framework; sourceTree = "<group>"; };
+		7FC794AD1C7E3142008B636D /* libspotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libspotify.framework; path = ../libs/libspotify.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* exampleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exampleDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
@@ -63,7 +60,6 @@
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		FEF707BF9D8E82AA1CFF0D57 /* ofxCocoaLibSpotify.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxCocoaLibSpotify.h; path = ../../../addons/ofxCocoaLibSpotify/src/ofxCocoaLibSpotify.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FC794AF1C7E3142008B636D /* libspotify.framework in Frameworks */,
 				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
-				75D50B977661E4178A848C7C /* CocoaLibSpotify.framework in Frameworks */,
-				5C3B46CE70363D40D091067D /* libspotify.framework in Frameworks */,
+				7FC794AE1C7E3142008B636D /* CocoaLibSpotify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,8 +79,8 @@
 		1DE0D31BA06176D023071045 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				9CE1CB530BE2979C1872B98D /* CocoaLibSpotify.framework */,
-				6DAD894348BEB802974F94AE /* libspotify.framework */,
+				7FC794AC1C7E3142008B636D /* CocoaLibSpotify.framework */,
+				7FC794AD1C7E3142008B636D /* libspotify.framework */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -156,10 +152,10 @@
 		F092972A5235664EDB93DA50 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				FEF707BF9D8E82AA1CFF0D57 /* ofxCocoaLibSpotify.h */,
+				7FC794AB1C7E3131008B636D /* ofxCocoaLibSpotify.h */,
 				3C47742572776B79D6D85FE6 /* ofxCocoaLibSpotify.mm */,
-				7FC794A01C7E27EA008B636D /* ofxCocoaLibSpotifyDelegate.h */,
-				7FC794A11C7E27EA008B636D /* ofxCocoaLibSpotifyDelegate.m */,
+				7FC794A81C7E311E008B636D /* ofxCocoaLibSpotifyDelegate.h */,
+				7FC794A91C7E311E008B636D /* ofxCocoaLibSpotifyDelegate.m */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -266,9 +262,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				7FC794AA1C7E311E008B636D /* ofxCocoaLibSpotifyDelegate.m in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				68416869D3D0D5631228B5F8 /* ofxCocoaLibSpotify.mm in Sources */,
-				7FC794A21C7E27EA008B636D /* ofxCocoaLibSpotifyDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,13 +1,11 @@
 //
 //  ofxCocoaLibSpotifyDelegate.m
-//  example
 //
 //  Created by Kenta Watashima on 2/25/16.
 //
 //
 
 #include "ofxCocoaLibSpotifyDelegate.h"
-#include "appkey.c"
 
 @interface ofxCocoaLibSpotifyDelegate ()
 

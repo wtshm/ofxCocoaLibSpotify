@@ -1,6 +1,5 @@
 //
 //  ofxCocoaLibSpotifyDelegate.h
-//  example
 //
 //  Created by Kenta Watashima on 2/25/16.
 //
@@ -10,6 +9,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <CocoaLibSpotify/CocoaLibSpotify.h>
+#include "appkey.c"
 
 @interface ofxCocoaLibSpotifyDelegate : NSObject <SPSessionDelegate, SPSessionPlaybackDelegate, SPPlaybackManagerDelegate>
 
