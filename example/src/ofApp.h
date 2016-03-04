@@ -23,5 +23,6 @@ public:
     void gotMessage(ofMessage msg);
     
     ofxCocoaLibSpotify spotify;
+    ofImage albumCover;
 		
 };

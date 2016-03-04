@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		3C47742572776B79D6D85FE6 /* ofxCocoaLibSpotify.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp.preprocessed; fileEncoding = 30; name = ofxCocoaLibSpotify.mm; path = ../src/ofxCocoaLibSpotify.mm; sourceTree = SOURCE_ROOT; };
 		7FC794A81C7E311E008B636D /* ofxCocoaLibSpotifyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxCocoaLibSpotifyDelegate.h; path = ../src/ofxCocoaLibSpotifyDelegate.h; sourceTree = "<group>"; };
-		7FC794A91C7E311E008B636D /* ofxCocoaLibSpotifyDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ofxCocoaLibSpotifyDelegate.m; path = ../src/ofxCocoaLibSpotifyDelegate.m; sourceTree = "<group>"; };
+		7FC794A91C7E311E008B636D /* ofxCocoaLibSpotifyDelegate.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ofxCocoaLibSpotifyDelegate.m; path = ../src/ofxCocoaLibSpotifyDelegate.m; sourceTree = "<group>"; };
 		7FC794AB1C7E3131008B636D /* ofxCocoaLibSpotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxCocoaLibSpotify.h; path = ../src/ofxCocoaLibSpotify.h; sourceTree = "<group>"; };
 		7FC794AC1C7E3142008B636D /* CocoaLibSpotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLibSpotify.framework; path = ../libs/CocoaLibSpotify.framework; sourceTree = "<group>"; };
 		7FC794AD1C7E3142008B636D /* libspotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libspotify.framework; path = ../libs/libspotify.framework; sourceTree = "<group>"; };

@@ -61,7 +61,7 @@ double ofxCocoaLibSpotify::getPosition() {
 double ofxCocoaLibSpotify::getDuration() {
     SPTrack *track = ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack;
     if (track != nil) {
-        return ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack.duration;
+        return track.duration;
     }
     return 0;
 }
@@ -73,7 +73,7 @@ bool ofxCocoaLibSpotify::isPlaying() {
 string ofxCocoaLibSpotify::getCurrentArtistName() {
     SPTrack *track = ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack;
     if (track != nil) {
-        return [((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack.album.artist.name UTF8String];
+        return [track.album.artist.name UTF8String];
     }
     return "";
 }
@@ -81,7 +81,7 @@ string ofxCocoaLibSpotify::getCurrentArtistName() {
 string ofxCocoaLibSpotify::getCurrentTrackName() {
     SPTrack *track = ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack;
     if (track != nil) {
-        return [((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack.name UTF8String];
+        return [track.name UTF8String];
     }
     return "";
 }
@@ -89,7 +89,71 @@ string ofxCocoaLibSpotify::getCurrentTrackName() {
 string ofxCocoaLibSpotify::getCurrentAlbumName() {
     SPTrack *track = ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack;
     if (track != nil) {
-        return [((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack.album.name UTF8String];
+        return [track.album.name UTF8String];
     }
     return "";
+}
+
+bool ofxCocoaLibSpotify::getCurrentAlbumCover(ofImage &result) {
+    SPTrack *track = ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack;
+    
+    if (track != nil) {
+        NSImage *image = track.album.cover.image;
+        
+        if (image == nil) {
+            return false;
+        }
+        
+        CGFloat width = image.size.width;
+        CGFloat height = image.size.height;
+        
+        NSRect imageRect = NSMakeRect(0, 0, width, height);
+        CGImageRef cgImage = [image CGImageForProposedRect:&imageRect context:NULL hints:nil];
+        
+        int bytesPerPixel = CGImageGetBitsPerPixel(cgImage) / 8;
+        if (bytesPerPixel == 3) bytesPerPixel = 4;
+        
+        // Allocated memory needed for the bitmap context
+        GLubyte *pixels = (GLubyte *)malloc(width * height * bytesPerPixel);
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        
+        // Uses the bitmatp creation function provided by the Core Graphics framework.
+        CGContextRef spriteContext = CGBitmapContextCreate(pixels,
+                                                           width,
+                                                           height,
+                                                           CGImageGetBitsPerComponent(cgImage),
+                                                           width * bytesPerPixel,
+                                                           colorSpace,
+                                                           bytesPerPixel == 4 ? kCGImageAlphaPremultipliedLast : kCGImageAlphaNone);
+        CGColorSpaceRelease(colorSpace);
+        
+        if (spriteContext == NULL) {
+            free(pixels);
+            return false;
+        }
+        
+        CGContextSetBlendMode(spriteContext, kCGBlendModeCopy);
+        CGContextDrawImage(spriteContext, CGRectMake(0.0, 0.0, width, height), cgImage);
+        CGContextRelease(spriteContext);
+        
+        ofImageType ofImageMode;
+        
+        switch (bytesPerPixel) {
+            case 1:
+                ofImageMode = OF_IMAGE_GRAYSCALE;
+                break;
+            case 3:
+                ofImageMode = OF_IMAGE_COLOR;
+                break;
+            case 4: 
+            default:
+                ofImageMode = OF_IMAGE_COLOR_ALPHA;
+                break;
+        }
+        
+        result.setFromPixels(pixels, width, height, ofImageMode, true);
+        
+        free(pixels);
+        return true;
+    }
 }

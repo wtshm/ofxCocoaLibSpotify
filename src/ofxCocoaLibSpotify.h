@@ -7,6 +7,7 @@
 
 #pragma once
 
+#include "ofMain.h"
 #include <string>
 using namespace std;
 
@@ -28,6 +29,7 @@ public:
     string getCurrentArtistName();
     string getCurrentTrackName();
     string getCurrentAlbumName();
+    bool getCurrentAlbumCover(ofImage &result);
     
 private:
     void *delegate;

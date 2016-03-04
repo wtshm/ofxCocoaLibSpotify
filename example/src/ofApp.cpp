@@ -15,17 +15,21 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     if (spotify.isPlaying()) {
-        ofDrawBitmapString(spotify.getCurrentArtistName(), 20, 25);
-        ofDrawBitmapString(spotify.getCurrentTrackName(), 20, 50);
-        ofDrawBitmapString(spotify.getCurrentAlbumName(), 20, 75);
-        ofDrawBitmapString(ofToString(spotify.getPosition()) + " / " + ofToString(spotify.getDuration()), 20, 100);
+        ofDrawBitmapString(spotify.getCurrentArtistName(), 15, 20);
+        ofDrawBitmapString(spotify.getCurrentTrackName(), 15, 40);
+        ofDrawBitmapString(spotify.getCurrentAlbumName(), 15, 60);
+        ofDrawBitmapString(ofToString(spotify.getPosition()) + " / " + ofToString(spotify.getDuration()), 15, 80);
+        
+        if (spotify.getCurrentAlbumCover(albumCover)) {
+            albumCover.draw(ofPoint(15, 100), 300, 300);
+        }
     }
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     if (key == ' ') {
-        !spotify.isPlaying() ? spotify.play("spotify:track:5pQYjzkALsgYOcFTC8DMmU") : spotify.stop();
+        !spotify.isPlaying() ? spotify.play("spotify:track:0tQroKFN5WKtPQTdmkDrfm") : spotify.stop();
     }
 }
 
