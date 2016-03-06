@@ -21,7 +21,7 @@ void ofApp::draw(){
         ofDrawBitmapString(ofToString(spotify.getPosition()) + " / " + ofToString(spotify.getDuration()), 15, 80);
         
         if (spotify.getCurrentAlbumCover(albumCover)) {
-            albumCover.draw(ofPoint(15, 100), 300, 300);
+            albumCover.draw(ofPoint(15, 100), albumCover.getWidth(), albumCover.getHeight());
         }
     }
 }
@@ -29,7 +29,7 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     if (key == ' ') {
-        !spotify.isPlaying() ? spotify.play("spotify:track:0tQroKFN5WKtPQTdmkDrfm") : spotify.stop();
+        !spotify.isPlaying() ? spotify.play("spotify:track:4T26YGUHTE5LLbb8xnTHPL") : spotify.stop();
     }
 }
 

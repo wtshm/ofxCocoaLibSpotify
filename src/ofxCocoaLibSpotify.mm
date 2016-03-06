@@ -98,20 +98,20 @@ bool ofxCocoaLibSpotify::getCurrentAlbumCover(ofImage &result) {
     SPTrack *track = ((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager.currentTrack;
     
     if (track != nil) {
-        NSImage *image = track.album.cover.image;
+        NSImage *image = track.album.largestAvailableCover.image;
         
         if (image == nil) {
             return false;
         }
         
-        CGFloat width = image.size.width;
-        CGFloat height = image.size.height;
-        
-        NSRect imageRect = NSMakeRect(0, 0, width, height);
+        NSRect imageRect = NSMakeRect(0, 0, image.size.width, image.size.height);
         CGImageRef cgImage = [image CGImageForProposedRect:&imageRect context:NULL hints:nil];
         
         int bytesPerPixel = CGImageGetBitsPerPixel(cgImage) / 8;
         if (bytesPerPixel == 3) bytesPerPixel = 4;
+        
+        int width = image.size.width * bytesPerPixel;
+        int height = image.size.height * bytesPerPixel;
         
         // Allocated memory needed for the bitmap context
         GLubyte *pixels = (GLubyte *)malloc(width * height * bytesPerPixel);
