@@ -28,6 +28,7 @@ void ofxCocoaLibSpotify::play(std::string trackURL) {
                 [((ofxCocoaLibSpotifyDelegate *)delegate).playbackManager playTrack:track callback:^(NSError *error) {
                     if (error) {
                         NSLog(@"%@", error);
+                        onError(error.code);
                     }
                 }];
             }];
@@ -159,4 +160,8 @@ bool ofxCocoaLibSpotify::getCurrentAlbumCover(ofImage &result) {
         free(pixels);
         return true;
     }
+}
+
+void ofxCocoaLibSpotify::onError(int errorCode) {
+    ofNotifyEvent(errorEvent, errorCode, this);
 }

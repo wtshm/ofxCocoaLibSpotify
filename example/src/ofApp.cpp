@@ -5,6 +5,9 @@ void ofApp::setup(){
     ofBackground(0);
     spotify = ofxCocoaLibSpotify();
     spotify.setup("USERNAME", "PASSWORD");
+    
+    // error handling
+    ofAddListener(spotify.errorEvent, this, &ofApp::onError);
 }
 
 //--------------------------------------------------------------
@@ -27,9 +30,19 @@ void ofApp::draw(){
 }
 
 //--------------------------------------------------------------
+void ofApp::onError(int &errorCode){
+    if (errorCode == 3) {
+        cout << "The track cannot be played" << endl;
+    }
+}
+
+//--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    if (key == ' ') {
+    if (key == '1') {
         !spotify.isPlaying() ? spotify.play("spotify:track:4T26YGUHTE5LLbb8xnTHPL") : spotify.stop();
+    }
+    if (key == '2') {
+        !spotify.isPlaying() ? spotify.play("spotify:track:5pmSezbf3VZeXvYBkggLhw") : spotify.stop(); // This track is not available in US.
     }
 }
 

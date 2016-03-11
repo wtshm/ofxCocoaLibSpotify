@@ -30,6 +30,9 @@ public:
     string getCurrentTrackName();
     string getCurrentAlbumName();
     bool getCurrentAlbumCover(ofImage &result);
+    void onError(int errorCode);
+    
+    ofEvent<int> errorEvent;
     
 private:
     void *delegate;
